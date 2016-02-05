@@ -40,12 +40,12 @@ var pluckFirstLineFromFile = function (filePath, callback
 ) {
   fs.readFile(filePath, 'utf8', function(err, content) {
     if(err) {
-      callback(err)
+      callback(err);
     } else {
-      var firstLine = content.split("\n")[0]
+      var firstLine = content.split("\n")[0];
       callback(err, firstLine);
     }
-  })
+  });
 };
 
 // This function should retrieve the status code of a GET request to `url`
@@ -55,11 +55,11 @@ var getStatusCode = function (url, callback
 ) {
   request(url, function(err, res, body) {
     if(err) {
-      callback(err)
+      callback(err);
     } else {
-      callback(err, res.statusCode)
+      callback(err, res.statusCode);
     }
-  })
+  });
 };
 
 // Export these functions so we can unit test them
