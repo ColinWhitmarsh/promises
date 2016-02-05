@@ -46,7 +46,7 @@ var getStatusCodeAsync = function (url) {
       if(err) {
         reject(err)
       } else {
-        resolve(res.statusCode)
+        resolve(res.statusCode, body)
       }
     })
   })
