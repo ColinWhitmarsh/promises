@@ -14,8 +14,8 @@ var Promise = require('bluebird');
 
 // All of the work done in promiseConstructor.js can be done in these three lines:
 var nodeStyle = require('./callbackReview.js');
-var pluckFirstLineFromFileAsync = Promise.promisify(nodeStyle.pluckFirstLineFromFile)
-var getStatusCodeAsync = Promise.promisify(nodeStyle.getStatusCode)
+var pluckFirstLineFromFileAsync = Promise.promisify(nodeStyle.pluckFirstLineFromFile);
+var getStatusCodeAsync = Promise.promisify(nodeStyle.getStatusCode);
 
 // Assuming all functions in a library precisely follow the node style callback pattern,
 // you can even promisify an entire library!
@@ -60,18 +60,18 @@ var getGitHubProfile = function (user, callback) {
  });
 };
 
-var getGitHubProfileAsync = Promise.promisify(getGitHubProfile)
+var getGitHubProfileAsync = Promise.promisify(getGitHubProfile);
 
 
 // (2) Asyncronous token generation
 var generateRandomToken = function (callback) {
  crypto.randomBytes(20, function(err, buffer) {
-   if (err) return callback(err, null)
+   if (err) return callback(err, null);
    callback(null, buffer.toString('hex'));
  });
 };
 
-var generateRandomTokenAsync = Promise.promisify(generateRandomToken)
+var generateRandomTokenAsync = Promise.promisify(generateRandomToken);
 
 
 // (3) Asyncronous file manipulation
@@ -83,13 +83,13 @@ var readFileAndMakeItFunny = function (filePath, callback) {
      .map(function(line) {
        return line + ' lol';
      })
-     .join('\n')
+     .join('\n');
 
    callback(null, funnyFile);
  });
 };
 
-var readFileAndMakeItFunnyAsync = Promise.promisify(readFileAndMakeItFunny)
+var readFileAndMakeItFunnyAsync = Promise.promisify(readFileAndMakeItFunny);
 
 // Export these functions so we can unit test them
 // and reuse them in later code ;)

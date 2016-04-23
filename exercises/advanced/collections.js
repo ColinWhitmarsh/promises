@@ -22,17 +22,17 @@ var asyncLib = require('../../lib/asyncLib.js');
  * then continue to the exercises when you're ready
  */
 
-// Promise.all([
-//   asyncLib.getValueA(),
-//   asyncLib.getValueB(),
-//   asyncLib.getValueC(),
-//   asyncLib.getValueD()
-// ])
-// .then(asyncLib.logResolvedValues)
-// .then(asyncLib.filterValuesFromCollection)
-// .then(asyncLib.doMoreAsyncWorkWithFilteredValues)
-// // `bind` sets correct context when using console.log as a callback
-// .catch(console.log.bind(console));
+Promise.all([
+  asyncLib.getValueA(),
+  asyncLib.getValueB(),
+  asyncLib.getValueC(),
+  asyncLib.getValueD()
+])
+.then(asyncLib.logResolvedValues)
+.then(asyncLib.filterValuesFromCollection)
+.then(asyncLib.doMoreAsyncWorkWithFilteredValues)
+// `bind` sets correct context when using console.log as a callback
+.catch(console.log.bind(console));
 
 
 /******************************************************************

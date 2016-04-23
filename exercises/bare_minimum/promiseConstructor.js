@@ -30,13 +30,13 @@ var pluckFirstLineFromFileAsync = function (filePath) {
   return new Promise(function(resolve, reject){
     fs.readFile(filePath, 'utf8', function(err, content) {
       if(err) {
-        reject(err)
+        reject(err);
       } else {
-        var firstLine = content.split("\n")[0]
+        var firstLine = content.split("\n")[0];
         resolve(firstLine);
       }
-    })
-  })
+    });
+  });
 };
 
 // This function should retrieve the status code of a GET request to `url`
@@ -44,12 +44,12 @@ var getStatusCodeAsync = function (url) {
   return new Promise(function(resolve, reject){
     request(url, function(err, res, body) {
       if(err) {
-        reject(err)
+        reject(err);
       } else {
-        resolve(res.statusCode, body)
+        resolve(res.statusCode, body);
       }
-    })
-  })
+    });
+  });
 };
 
 // Export these functions so we can unit test them
@@ -57,4 +57,4 @@ var getStatusCodeAsync = function (url) {
 module.exports = {
   getStatusCodeAsync: getStatusCodeAsync,
   pluckFirstLineFromFileAsync: pluckFirstLineFromFileAsync
-}
+};
